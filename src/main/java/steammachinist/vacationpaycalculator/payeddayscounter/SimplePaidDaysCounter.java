@@ -11,7 +11,7 @@ import static java.time.DayOfWeek.SATURDAY;
 import static java.time.DayOfWeek.SUNDAY;
 
 @Value
-public class SimplePayedDaysCounter implements PayedDaysCounter {
+public class SimplePaidDaysCounter implements PaidDaysCounter {
     public static final int FIRST_LEAP_YEAR = 4;
     Set<LocalDate> holidays;
 

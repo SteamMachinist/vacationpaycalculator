@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
-import steammachinist.vacationpaycalculator.payeddayscounter.SimplePayedDaysCounter;
+import steammachinist.vacationpaycalculator.payeddayscounter.SimplePaidDaysCounter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,8 +24,8 @@ public class AppContextConfiguration {
     Resource holidaysFile;
 
     @Bean
-    public SimplePayedDaysCounter simplePayedDaysCounter() {
-        return new SimplePayedDaysCounter(readHolidaysFromFile());
+    public SimplePaidDaysCounter simplePayedDaysCounter() {
+        return new SimplePaidDaysCounter(readHolidaysFromFile());
     }
 
     @Bean
@@ -36,7 +36,7 @@ public class AppContextConfiguration {
                 return lines.map(s -> {
                     String[] date = s.split("/");
                     return LocalDate.of(
-                            SimplePayedDaysCounter.FIRST_LEAP_YEAR,
+                            SimplePaidDaysCounter.FIRST_LEAP_YEAR,
                             Integer.parseInt(date[1]),
                             Integer.parseInt(date[0]));
                 }).collect(Collectors.toSet());

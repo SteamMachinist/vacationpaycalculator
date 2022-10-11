@@ -5,10 +5,10 @@ import lombok.Value;
 @Value
 public class VacationPay {
     private static final int MONTH_DAYS = 30;
-    int payedDays;
+    int paidDays;
     double monthSalary;
 
     public double calculatePay() {
-        return payedDays * monthSalary / MONTH_DAYS;
+        return paidDays * monthSalary / MONTH_DAYS;
     }
 }
