@@ -21,7 +21,7 @@ should return:
 
 * with specific dates:
 ```
-curl -X GET "http://localhost:8080/calculate?start=03/10/2022&finish=09/10/2022>&monthSalary=2100"
+curl -X GET "http://localhost:8080/calculate?start=03/10/2022&finish=09/10/2022&monthSalary=2100"
 ```
 should return (5 paid days and 2 weekends):
-> 450.0
+> 350.0
